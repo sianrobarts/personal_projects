@@ -1,0 +1,22 @@
+import random
+modules = ["Intro", "Omics", "Ethics", "Genomic Diseases", "Cancer", "Bioinformatics", "Counselling", "infectious Diseases"]
+
+# The random.shuffle() function is used to randomly shuffle the elements in the modules list. This ensures that the pairing will be random.
+random.shuffle(modules)
+
+# initialize an empty list called pairs to store the module pairs.
+pairs = []
+
+#This if statement checks if the number of modules is odd. If it is, we pop one module from the modules list and form a pair with None. The pair is then appended to the pairs list. This is done to handle the case where the number of modules is not even.
+if len(modules) % 2 != 0:
+    pairs.append((modules.pop(),))
+
+#In this while loop, we pop two elements from the modules list at a time and form a pair. The pair is then appended to the pairs list. This loop continues until there are no more modules left in the modules list.
+while modules:
+    pair = modules.pop(), modules.pop()
+    pairs.append(pair)
+
+for pair in pairs:
+    print(pair)
+    
+   
